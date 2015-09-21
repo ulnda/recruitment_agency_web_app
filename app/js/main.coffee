@@ -1,4 +1,5 @@
-module = angular.module('app', ['ui.bootstrap', 'ui.router'])
+module = angular.module('app', ['ui.bootstrap', 'ui.router', 'app.controllers', 
+  'app.employees'])
 
 module.config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
   ($locationProvider, $stateProvider, $urlRouterProvider) ->

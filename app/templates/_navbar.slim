@@ -1,4 +1,12 @@
-nav.navbar.navbar-default
+nav.navbar.navbar-default ng-controller="NavController"
   .container-fluid
     .navbar-header
       a.navbar-brand ui-sref="home" Recruitment Agency
+    .navbar-collapse 
+      ul.nav.navbar-nav
+        li ng-class="getState('home')"
+          a ui-sref="home" Home
+        li ng-class="getState('employees')"
+          a ui-sref="employees.all" Employees
+        li ng-class="getState('vacancies')"
+          a ui-sref="vacancies.all" Vacancies
