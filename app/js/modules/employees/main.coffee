@@ -10,5 +10,9 @@ module.config(['$stateProvider', ($stateProvider) ->
       url: ''
       controller: 'EmployeesController'
       templateUrl: 'templates/employees/index.html'
+    ).state('employees.new'
+      url: '/new'
+      controller: 'NewEmployeeController'
+      templateUrl: 'templates/employees/new.html'
     )
 ])

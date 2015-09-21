@@ -1,0 +1,22 @@
+.form-group ng-class="{ 'has-error' : employeeForm.name.$dirty && employeeForm.name.$invalid }"
+  label.col-sm-3.control-label for="name" Name
+  .col-sm-9
+    input.form-control#name type="text" name="name" ng-model="employee.name" ng-required="true" placeholder="Name"
+    span.error-message ng-show="employeeForm.name.$dirty && employeeForm.name.$invalid" Required field
+.form-group ng-class="{ 'has-error' : employeeForm.contact_info.$dirty && employeeForm.contact_info.$invalid }"
+  label.col-sm-3.control-label for="contact_info" Contact Info
+  .col-sm-9
+    input.form-control#contact_info type="text" name="contact_info" ng-model="employee.contact_info" ng-required="true" placeholder="Contact Info"
+    span.error-message ng-show="employeeForm.contact_info.$dirty && employeeForm.contact_info.$invalid" Required field
+.form-group ng-class="{ 'has-error' : employeeForm.salary.$dirty && employeeForm.salary.$invalid }"
+  label.col-sm-3.control-label for="salary" Desired Salary
+  .col-sm-9
+    input.form-control#salary type="number" name="salary" ng-model="employee.salary" ng-required="true" placeholder="Desired Salary"
+    span.error-message ng-show="employeeForm.salary.$dirty && employeeForm.salary.$invalid" Required digital field
+.form-group ng-class="{ 'has-error' : employeeForm.job_search.$dirty && employeeForm.job_search.$invalid }"
+  label.col-sm-3.control-label for="job_search" Job Search
+  .col-sm-9
+    input type="checkbox" name="job_search" ng-model="employee.job_search"
+.form-group
+  .col-sm-9.col-sm-offset-3
+    button.btn.btn-success type="button" ng-click="saveEmployee()" Save

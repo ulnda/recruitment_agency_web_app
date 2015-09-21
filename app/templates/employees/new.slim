@@ -1,0 +1,5 @@
+.employees.new
+  .col-xs-10.col-xs-offset-1
+    h3.text-center New Employee
+    form.form-horizontal name="employeeForm" ng-submit="createEmployee()" role="form"
+      div ng-include="'templates/employees/_form.html'"
