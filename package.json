@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git@github.com:ulnda/recruitment_agency_web_app.git"
   },
-  "author": "ulnda",
+  "author": "ulnda <denis.nagibin@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ulnda/recruitment_agency_web_app/issues"
