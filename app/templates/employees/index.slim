@@ -1,0 +1,13 @@
+.row
+  .col-xs-12
+    .with-employees ng-show="employees.length"
+      h3.text-center All Employees
+      table.table
+        tr ng-repeat="e in employees | orderBy:'name'"
+          td.col-xs-10.vertical-align
+            | {{ e.name }}
+          td.col-xs-2
+            a.btn.btn-primary ui-sref="employees.edit({ id : e.id })" Edit
+            a.btn.btn-danger  ng-click="deleteEmployee(e)" Delete
+    .without-employees ng-hide="employees.length"
+      h3.text-center There are no employees
