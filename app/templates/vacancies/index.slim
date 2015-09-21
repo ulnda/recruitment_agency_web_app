@@ -1,0 +1,13 @@
+.row
+  .col-xs-12
+    .with-vacancies ng-show="vacancies.length"
+      h3.text-center All Vacancies
+      table.table
+        tr ng-repeat="v in vacancies | orderBy:'title'"
+          td.col-xs-10.vertical-align
+            | {{ v.title }}
+          td.col-xs-2
+            a.btn.btn-primary ui-sref="vacancies.edit({ id : v.id })" Edit
+            a.btn.btn-danger  ng-click="deleteVacancy(v)" Delete
+    .without-vacancies ng-hide="vacancies.length"
+      h3.text-center There are no vacancies
