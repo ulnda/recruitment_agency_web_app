@@ -21,6 +21,7 @@ var clean = require('gulp-clean');
 var rename = require('gulp-rename');
 var runSequence = require('run-sequence');
 var connect = require('gulp-connect');
+var inject = require('gulp-inject');
 
 // Cleaning project folder task
 gulp.task('clean', function() {
@@ -51,9 +52,19 @@ gulp.task('images', function() {
 
 // Processing templates task
 gulp.task('templates', function() {
-  return gulp.src('app/**/*.slim')
+  return gulp.src(['app/**/*.slim', '!app/index.slim'])
           .pipe(slim({pretty: true}))
-          //.pipe(minifyHTML())
+          .pipe(minifyHTML())
+          .pipe(gulp.dest(dist));
+});
+
+gulp.task('inject', function() {
+  var sources = gulp.src([dist + '/js/**/*.js', dist + '/css/*.css'], {read: false});
+
+  return gulp.src('app/index.slim')
+          .pipe(inject(sources, {ignorePath: '/dist/'}))
+          .pipe(slim({pretty: true}))
+          .pipe(minifyHTML())
           .pipe(gulp.dest(dist));
 });
 
@@ -97,5 +108,5 @@ gulp.task('server', function() {
 
 // Default task
 gulp.task('default', function() {
-  runSequence(['styles', 'scripts', 'images', 'bower_components'], 'templates', 'server', 'watch')
+  runSequence(['styles', 'scripts', 'images', 'bower_components'], 'templates', 'inject', 'server', 'watch')
 })
