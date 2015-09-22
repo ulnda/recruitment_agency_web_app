@@ -1,7 +1,20 @@
 angular.module('app.employees.controllers', []).controller('EmployeesController', 
-  ['$scope', '$state', ($scope, $state) ->
+  ['$scope', '$state', '$modal', ($scope, $state, $modal) ->
 
     $scope.employees = [{ name: 'Иванов Иван Иванович' }]
+
+    $scope.deleteEmployee = (employee) ->
+      modalInstance = $modal.open
+        templateUrl: 'templates/deleting_modal.html'
+        controller: 'DeletingSubjectModalController'
+        size: 'sm'
+        resolve:
+          subject: ->
+            employee 
+          title: ->
+            'работника'
+          body: ->
+            "работника '#{employee.name}'"
 ]).controller('NewEmployeeController', ['$scope', '$state', ($scope, $state) ->
 
     $scope.employee = { job_search: false }
