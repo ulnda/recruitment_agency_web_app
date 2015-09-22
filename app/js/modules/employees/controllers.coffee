@@ -4,5 +4,8 @@ angular.module('app.employees.controllers', []).controller('EmployeesController'
     console.log('employees')
 ]).controller('NewEmployeeController', ['$scope', '$state', ($scope, $state) ->
 
-    $scope.employee = {}
+    $scope.employee = { job_search: false }
+
+    $scope.createEmployee = ->
+      console.log($scope.employee)
 ])

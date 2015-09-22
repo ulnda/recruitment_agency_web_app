@@ -1,22 +1,26 @@
 .form-group ng-class="{ 'has-error' : employeeForm.name.$dirty && employeeForm.name.$invalid }"
-  label.col-sm-3.control-label for="name" Name
+  label.col-sm-3.control-label for="name" Имя
   .col-sm-9
-    input.form-control#name type="text" name="name" ng-model="employee.name" placeholder="Name" cyrillic-full-name="true" ng-required="true"
-    span.error-message ng-show="employeeForm.name.$dirty && employeeForm.name.$invalid" Required field
+    input.form-control.cyrillic-full-name#name type="text" name="name" ng-model="employee.name" ng-required="true" placeholder="Имя"
+    span.error-message ng-show="employeeForm.name.$dirty && employeeForm.name.$invalid" Ф.И.О через пробел кирилицей
 .form-group ng-class="{ 'has-error' : employeeForm.contact_info.$dirty && employeeForm.contact_info.$invalid }"
-  label.col-sm-3.control-label for="contact_info" Contact Info
+  label.col-sm-3.control-label for="contact_info" Контактная информация
   .col-sm-9
-    input.form-control#contact_info type="text" name="contact_info" ng-model="employee.contact_info" ng-required="true" placeholder="Contact Info"
-    span.error-message ng-show="employeeForm.contact_info.$dirty && employeeForm.contact_info.$invalid" Required field
+    input.form-control.email-or-phone#contact_info type="text" name="contact_info" ng-model="employee.contact_info" ng-required="true" placeholder="E-mail или телефон"
+    .error-message ng-show="employeeForm.contact_info.$dirty && employeeForm.contact_info.$invalid"
+      | E-mail или телефон в формате:
+      ul
+        li +79020000000
+        li 89020000000
 .form-group ng-class="{ 'has-error' : employeeForm.salary.$dirty && employeeForm.salary.$invalid }"
-  label.col-sm-3.control-label for="salary" Desired Salary
+  label.col-sm-3.control-label for="salary" Желаемая зарплата
   .col-sm-9
-    input.form-control#salary type="number" name="salary" ng-model="employee.salary" ng-required="true" placeholder="Desired Salary"
-    span.error-message ng-show="employeeForm.salary.$dirty && employeeForm.salary.$invalid" Required digital field
+    input.form-control#salary type="number" min="1" name="salary" ng-model="employee.salary" ng-required="true" placeholder="Желаемая зарплата"
+    span.error-message ng-show="employeeForm.salary.$dirty && employeeForm.salary.$invalid" Обязательное поле
 .form-group ng-class="{ 'has-error' : employeeForm.job_search.$dirty && employeeForm.job_search.$invalid }"
-  label.col-sm-3.control-label for="job_search" Job Search
+  label.col-sm-3.control-label for="job_search" Поиск работы
   .col-sm-9
     input type="checkbox" name="job_search" ng-model="employee.job_search"
 .form-group
   .col-sm-9.col-sm-offset-3
-    button.btn.btn-success type="button" ng-click="saveEmployee()" Save
+    button.btn.btn-success type="submit" ng-disabled="employeeForm.$invalid || employeeForm.$pending" Сохранить

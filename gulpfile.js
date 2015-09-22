@@ -54,7 +54,7 @@ gulp.task('images', function() {
 gulp.task('templates', function() {
   return gulp.src(['app/**/*.slim', '!app/index.slim'])
           .pipe(slim({pretty: true}))
-          .pipe(minifyHTML())
+          //.pipe(minifyHTML())
           .pipe(gulp.dest(dist));
 });
 
