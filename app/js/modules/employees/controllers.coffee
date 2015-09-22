@@ -1,7 +1,7 @@
 angular.module('app.employees.controllers', []).controller('EmployeesController', 
   ['$scope', '$state', ($scope, $state) ->
 
-    console.log('employees')
+    $scope.employees = [{ name: 'Работник 1' }]
 ]).controller('NewEmployeeController', ['$scope', '$state', ($scope, $state) ->
 
     $scope.employee = { job_search: false }

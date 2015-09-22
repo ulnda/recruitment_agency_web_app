@@ -1,0 +1,5 @@
+.employees.edit
+  .col-xs-10.col-xs-offset-1
+    h3.text-center Редактировать работника
+    form.form-horizontal name="employeeForm" ng-submit="updateEmployee()" role="form"
+      div ng-include="'templates/employees/_form.html'"
