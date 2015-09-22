@@ -15,5 +15,9 @@ module.config(['$stateProvider', ($stateProvider) ->
       url: '/new'
       controller: 'NewEmployeeController'
       templateUrl: 'templates/employees/new.html'
+    ).state('employees.edit'
+      url: '/:id/edit'
+      controller: 'EditEmployeeController'
+      templateUrl: 'templates/employees/edit.html'
     )
 ])
