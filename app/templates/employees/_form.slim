@@ -1,7 +1,7 @@
 .form-group ng-class="{ 'has-error' : employeeForm.name.$dirty && employeeForm.name.$invalid }"
   label.col-sm-3.control-label for="name" Name
   .col-sm-9
-    input.form-control#name type="text" name="name" ng-model="employee.name" ng-required="true" placeholder="Name"
+    input.form-control#name type="text" name="name" ng-model="employee.name" placeholder="Name" cyrillic-full-name="true" ng-required="true"
     span.error-message ng-show="employeeForm.name.$dirty && employeeForm.name.$invalid" Required field
 .form-group ng-class="{ 'has-error' : employeeForm.contact_info.$dirty && employeeForm.contact_info.$invalid }"
   label.col-sm-3.control-label for="contact_info" Contact Info

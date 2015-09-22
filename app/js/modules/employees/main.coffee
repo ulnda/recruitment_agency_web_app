@@ -1,4 +1,5 @@
-module = angular.module('app.employees', ['app.employees.controllers'])
+module = angular.module('app.employees', ['app.employees.controllers', 
+  'app.employees.directives'])
 
 module.config(['$stateProvider', ($stateProvider) ->
 
