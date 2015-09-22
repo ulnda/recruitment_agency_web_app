@@ -1,13 +1,17 @@
 .row
   .col-xs-12
     .with-vacancies ng-show="vacancies.length"
-      h3.text-center All Vacancies
+      h2.text-center Все вакансии
       table.table
         tr ng-repeat="v in vacancies | orderBy:'title'"
-          td.col-xs-10.vertical-align
+          td.col-xs-7.vertical-align.title
             | {{ v.title }}
-          td.col-xs-2
-            a.btn.btn-primary ui-sref="vacancies.edit({ id : v.id })" Edit
-            a.btn.btn-danger  ng-click="deleteVacancy(v)" Delete
+          td.col-xs-5
+            .pull-right
+              a.btn.btn-info ui-sref="vacancies.edit({ id : v.id })" Работники
+              a.btn.btn-primary ui-sref="vacancies.edit({ id : v.id })" Редактировать
+              a.btn.btn-danger  ng-click="deleteVacancy(v)" Удалить
     .without-vacancies ng-hide="vacancies.length"
-      h3.text-center There are no vacancies
+      h3.text-center 
+        | На данный момент список вакансий пуст. 
+        a ui-sref="vacancies.new" Добавьте первую.

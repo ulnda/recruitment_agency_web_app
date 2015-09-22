@@ -1,0 +1,5 @@
+.vacancies.new
+  .col-xs-10.col-xs-offset-1
+    h3.text-center Новая вакансия
+    form.form-horizontal name="vacancyForm" ng-submit="createVacancy()" role="form"
+      div ng-include="'templates/vacancies/_form.html'"

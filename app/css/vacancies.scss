@@ -1,0 +1,10 @@
+.with-vacancies {
+  .title {
+    color: grey;
+    font: italic 1.5em Georgia, 'Times New Roman', Times, serif;
+  }
+}
+
+ul.dropdown-menu button[ng-click^="select(null)"] {
+  display: none;
+}

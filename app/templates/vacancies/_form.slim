@@ -1,0 +1,26 @@
+.form-group ng-class="{ 'has-error' : vacancyForm.title.$dirty && vacancyForm.title.$invalid }"
+  label.col-sm-3.control-label for="title" Название
+  .col-sm-9
+    input.form-control#title type="text" name="title" ng-model="vacancy.title" ng-required="true" placeholder="Название"
+    span.error-message ng-show="vacancyForm.title.$dirty && vacancyForm.title.$invalid" Обязательное поле
+.form-group ng-class="{ 'has-error' : vacancyForm.contact_info.$dirty && vacancyForm.contact_info.$invalid }"
+  label.col-sm-3.control-label for="contact_info" Контактная информация
+  .col-sm-9
+    input.form-control#contact_info type="text" name="contact_info" ng-model="vacancy.contact_info" ng-required="true" placeholder="Контактная информация"
+    .error-message ng-show="vacancyForm.contact_info.$dirty && vacancyForm.contact_info.$invalid" Обязательное поле
+.form-group
+  label.col-sm-3.control-label for="end_date" До
+  .col-sm-9
+    p.input-group
+      input.form-control name="end_date" type="text" datepicker-popup="{{ format }}" ng-model="vacancy.end_date" is-open="$parent.end_date_opened" min-date="minEndDate" datepicker-options="dateOptions" ng-required="true"
+      span class="input-group-btn"
+        button type="button" class="btn btn-default" ng-click="open($event)"
+          i class="glyphicon glyphicon-calendar"
+.form-group ng-class="{ 'has-error' : vacancyForm.salary.$dirty && vacancyForm.salary.$invalid }"
+  label.col-sm-3.control-label for="salary" Желаемая зарплата
+  .col-sm-9
+    input.form-control#salary type="number" min="1" name="salary" ng-model="vacancy.salary" ng-required="true" placeholder="Желаемая зарплата"
+    span.error-message ng-show="vacancyForm.salary.$dirty && vacancyForm.salary.$invalid" Обязательное поле
+.form-group
+  .col-sm-9.col-sm-offset-3
+    button.btn.btn-success type="submit" ng-disabled="vacancyForm.$invalid || vacancyForm.$pending" Сохранить

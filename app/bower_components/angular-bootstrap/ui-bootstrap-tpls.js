@@ -1618,9 +1618,9 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
     'datetime-local': 'yyyy-MM-ddTHH:mm:ss.sss',
     'month': 'yyyy-MM'
   },
-  currentText: 'Today',
-  clearText: 'Clear',
-  closeText: 'Done',
+  currentText: 'Сегодня',
+  clearText: 'Очистить',
+  closeText: 'Готово',
   closeOnDateSelection: true,
   appendToBody: false,
   showButtonBar: true,
