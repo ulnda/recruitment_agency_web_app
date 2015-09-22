@@ -1,7 +1,7 @@
 .row
   .col-xs-12
     .with-employees ng-show="employees.length"
-      h3.text-center All Employees
+      h3.text-center Все работники
       table.table
         tr ng-repeat="e in employees | orderBy:'name'"
           td.col-xs-10.vertical-align
@@ -10,4 +10,6 @@
             a.btn.btn-primary ui-sref="employees.edit({ id : e.id })" Edit
             a.btn.btn-danger  ng-click="deleteEmployee(e)" Delete
     .without-employees ng-hide="employees.length"
-      h3.text-center There are no employees
+      h3.text-center 
+        | На данный момент список работников пуст. 
+        a ui-sref="employees.new" Добавьте первого.

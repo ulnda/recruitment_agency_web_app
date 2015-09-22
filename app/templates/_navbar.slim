@@ -1,12 +1,12 @@
 nav.navbar.navbar-default ng-controller="NavController"
   .container-fluid
     .navbar-header
-      a.navbar-brand ui-sref="home" Recruitment Agency
+      a.navbar-brand ui-sref="home" Кадровое агенство
     .navbar-collapse 
       ul.nav.navbar-nav
         li ng-class="getState('home')"
-          a ui-sref="home" Home
+          a ui-sref="home" Главная
         li ng-class="getState('employees')"
-          a ui-sref="employees.all" Employees
+          a ui-sref="employees.all" Работники
         li ng-class="getState('vacancies')"
-          a ui-sref="vacancies.all" Vacancies
+          a ui-sref="vacancies.all" Вакансии
